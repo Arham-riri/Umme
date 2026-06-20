@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Umme ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        color: white;
+        overflow: hidden;
+    }
+
+    .container {
+        margin-top: 100px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    p {
+        font-size: 20px;
+        max-width: 650px;
+        margin: auto;
+        line-height: 1.6;
+    }
+
+    button {
+        padding: 15px 30px;
+        font-size: 18px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    #yes {
+        background-color: #ff4d6d;
+        color: white;
+    }
+
+    #no {
+        background-color: #555;
+        color: white;
+        position: absolute;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes floatUp {
+        0% {transform: translateY(0); opacity: 1;}
+        100% {transform: translateY(-100vh); opacity: 0;}
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Hey Umme ❤️</h1>
+
+```
+<p>
+    We started with just messages...  
+    then calls...  
+    then late night talks that I never wanted to end 💫  
+    <br><br>
+    Even though there’s distance between us,  
+    you became the closest person to my heart ❤️  
+    <br><br>
+    I may not be beside you physically…  
+    but my feelings for you are real, strong, and endless.
+</p>
+
+<h1 style="margin-top:40px;">
+    Umme... will you be mine forever? 💍
+</h1>
+
+<button id="yes" onclick="yesClicked()">Yes 💖</button>
+<button id="no" onmouseover="moveButton()">No 😢</button>
+```
+
+</div>
+
+<script>
+// YES CLICK
+function yesClicked() {
+    document.body.innerHTML = `
+        <div style="margin-top:120px; text-align:center; animation: fadeIn 2s;">
+            <h1>Umme ❤️</h1>
+            <p style="font-size:22px; max-width:700px; margin:auto;">
+                You just made me the happiest person alive 🥹💖  
+                <br><br>
+                No matter the distance,  
+                no matter the time,  
+                I promise to stand by you, support you, and love you endlessly 💫  
+                <br><br>
+                This is just the beginning of our story... ❤️
+            </p>
+        </div>
+    `;
+}
+
+// NO BUTTON RUNS AWAY 😄
+function moveButton() {
+    let button = document.getElementById("no");
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 50);
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+}
+
+// FLOATING HEARTS 💖
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    heart.style.fontSize = "24px";
+    heart.style.animation = "floatUp 4s linear";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 4000);
+}, 500);
+</script>
+
+</body>
+</html>
